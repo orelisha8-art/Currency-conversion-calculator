@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מחשבון המרת מטבעות</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">💳</div>
+      <div class="header-text">
+        <h1>מחשבון המרת מטבעות</h1>
+        <p>המרה בין שקל, דולר, אירו ופאונד בממשק פינטק מודרני.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <section class="converter-card">
+      <h2 class="card-title">המרת מטבעות</h2>
+      <p class="card-subtitle">בחר סכום ומטבעות, ולחץ על "המר עכשיו".</p>
+
+      <div class="form-group">
+        <label for="amountInput">סכום להמרה</label>
+        <input
+          type="number"
+          id="amountInput"
+          class="input-field"
+          placeholder="לדוגמה: 545"
+          min="0"
+          step="0.01"
+        />
+      </div>
+
+      <div class="currency-row">
+  <div class="form-group">
+    <label for="fromCurrency">מ-מטבע</label>
+    <select id="fromCurrency" class="select-field">
+      <option value="ILS">שקל חדש (ILS)</option>
+      <option value="USD">דולר אמריקאי (USD)</option>
+      <option value="EUR">אירו (EUR)</option>
+      <option value="GBP">פאונד בריטי (GBP)</option>
+    </select>
+  </div>
+
+  <button id="swapButton" class="swap-button" title="החלף בין המטבעות">
+    ⇄
+  </button>
+
+  <div class="form-group">
+    <label for="toCurrency">אל מטבע</label>
+    <select id="toCurrency" class="select-field">
+      <option value="USD">דולר אמריקאי (USD)</option>
+      <option value="EUR">אירו (EUR)</option>
+      <option value="GBP">פאונד בריטי (GBP)</option>
+      <option value="ILS">שקל חדש (ILS)</option>
+    </select>
+  </div>
+</div>
+
+
+      <button id="convertButton" class="primary-button">
+        המר עכשיו
+      </button>
+
+      <div class="result-box">
+        <p class="result-title">תוצאה:</p>
+        <p id="resultText" class="result-text" dir="ltr">
+  עדיין לא בוצעה המרה.
+</p>
+
+      </div>
+
+      <p class="hint-text">טיפ: אפשר ללחוץ Enter בשדה הסכום כדי לבצע המרה.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>נבנה במסגרת תרגול JS — רמת שיעור 5</p>
+  </footer>
+
+  <!-- Toast להודעות -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
